@@ -66,3 +66,12 @@
         npm install module-alias --save
         npm install @types/module-alias --save-dev
         ```
+
+-   **UNIX**
+
+    -   [rimraf](https://www.npmjs.com/package/rimraf): The UNIX command rm -rf for node
+
+        ```
+        npm install rimraf --save-dev
+        npm install @types/rimraf --save-dev
+        ```

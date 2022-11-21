@@ -1,0 +1,9 @@
+src/generators
+node_modules
+dist
+coverage
+.nyc_output
+logs
+.scannerwork
+.git
+.gitignore
