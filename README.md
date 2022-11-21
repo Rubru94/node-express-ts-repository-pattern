@@ -75,3 +75,11 @@
         npm install rimraf --save-dev
         npm install @types/rimraf --save-dev
         ```
+
+-   **Depencency injection - IoC Container**
+
+    -   [awilix](https://www.npmjs.com/package/awilix): Powerful Dependency Injection (DI) container for JavaScript/Node, written in TypeScript
+
+        ```
+        npm install awilix --save
+        ```

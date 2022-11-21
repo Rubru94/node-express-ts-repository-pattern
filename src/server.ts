@@ -6,7 +6,8 @@ config({ path: `${__dirname}/../environments` });
 addAliases({
     '@core': `${__dirname}/core`,
     '@utils': `${__dirname}/utils`,
-    '@root': `${__dirname}`
+    '@root': `${__dirname}`,
+    '@test': `${__dirname}/test`
 });
 import App from '@core/app';
 

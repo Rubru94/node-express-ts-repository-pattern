@@ -20,7 +20,8 @@
         "typeRoots": ["node_modules/@types"],
         "paths": {
             "@core/*": ["core/*"],
-            "@utils/*": ["utils/*"]
+            "@utils/*": ["utils/*"],
+            "@test/*": ["test/*"]
         },
         "forceConsistentCasingInFileNames": true
     },
