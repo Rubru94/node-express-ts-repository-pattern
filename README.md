@@ -83,3 +83,9 @@
         ```
         npm install awilix --save
         ```
+
+    -   [awilix-express](https://www.npmjs.com/package/awilix): Awilix helpers, router and scope-instantiating middleware for Express
+
+        ```
+        npm install awilix-express --save
+        ```
