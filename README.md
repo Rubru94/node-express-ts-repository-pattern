@@ -48,6 +48,7 @@
 
         ```
         npm install dotenv-flow --save
+        npm install @types/dotenv --save-dev
         npm install @types/dotenv-flow --save-dev
         ```
 
