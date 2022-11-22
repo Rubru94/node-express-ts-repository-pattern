@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
 import { GET, route } from 'awilix-express';
+import { Request, Response } from 'express';
 import { TestService } from '@test/services/test.service';
 
 @route('/check')

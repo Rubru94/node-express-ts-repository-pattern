@@ -1,4 +1,5 @@
 import { CustomError } from '@core/models/error.model';
+import { SubscriptionCreateDTO, SubscriptionUpdateDTO } from '@subscription/models/subscription.dto';
 import { SubscriptionService } from '@subscription/services/subscription.service';
 import { DELETE, GET, POST, PUT, route } from 'awilix-express';
 import { Request, Response } from 'express';
@@ -42,7 +43,7 @@ export class CheckController {
     async update(req: Request, res: Response): Promise<void> {
         try {
             const id = req.params?.id ? parseInt(req.params?.id) : null;
-            await this.subscriptionService.update(id, req.body as SubscriptionCreateDTO);
+            await this.subscriptionService.update(id, req.body as SubscriptionUpdateDTO);
             res.send();
         } catch (error) {
             throw new CustomError(error);

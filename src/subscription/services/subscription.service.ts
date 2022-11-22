@@ -1,4 +1,5 @@
 import { CustomError } from '@core/models/error.model';
+import { SubscriptionCreateDTO, SubscriptionUpdateDTO } from '@subscription/models/subscription.dto';
 import { ISubscription } from '@subscription/models/subscription.interface';
 import { SubscriptionRepository } from '@subscription/repositories/subscription.repository';
 
