@@ -17,13 +17,13 @@ export class SubscriptionService {
         const entry = await this.subscriptionRepository.findByUserAndCode(subscription.userId, subscription.code);
 
         if (!entry) await this.subscriptionRepository.create(subscription as ISubscription);
-        else throw new CustomError('User subscription already exists');
+        else throw new CustomError({ error: 'User subscription already exists' });
     }
 
     async update(id: number, subscription: SubscriptionUpdateDTO): Promise<void> {
         const entry = await this.subscriptionRepository.find(id);
         if (entry) this.subscriptionRepository.update({ ...entry, ...subscription } as ISubscription);
-        else throw new CustomError('Subscription not found');
+        else throw new CustomError({ error: 'Subscription not found' });
     }
 
     async delete(id: number): Promise<void> {

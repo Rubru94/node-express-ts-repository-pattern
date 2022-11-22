@@ -1,8 +1,12 @@
-export class CustomError extends Error {
-    readonly statusCode: number;
-    message: string;
+import { constants } from 'http2';
 
-    constructor(msg: string = 'An unexpected error occurred') {
-        super(msg);
+export class CustomError extends Error {
+    readonly error: string;
+    statusCode: number;
+
+    constructor(error?: Partial<CustomError>) {
+        super();
+        this.statusCode = error?.statusCode ?? constants.HTTP_STATUS_INTERNAL_SERVER_ERROR;
+        this.error = error?.error ?? error?.message ?? 'An unexpected error occurred';
     }
 }
