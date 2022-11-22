@@ -1,3 +1,4 @@
+import { SubscriptionRepositoryMySQL } from '@subscription/repositories/subscription.repository.mysql';
 import { TestService } from '@test/services/test.service';
 import { createContainer } from 'awilix';
 import { scopePerRequest } from 'awilix-express/lib/scope-per-request';
@@ -13,6 +14,14 @@ export class IoCContainer {
             injectionMode: 'CLASSIC'
         });
         this.value.register({
+            /**
+             * @repositories
+             */
+            subscriptionRepository: asClass(SubscriptionRepositoryMySQL).scoped(),
+
+            /**
+             * @services
+             */
             testService: asClass(TestService).scoped()
         });
         app.use(scopePerRequest(this.value));
