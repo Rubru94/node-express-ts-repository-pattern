@@ -89,3 +89,12 @@
         ```
         npm install awilix-express --save
         ```
+
+-   **Database**
+
+    -   [mysql2](https://www.npmjs.com/package/mysql2): MySQL client for Node.js with focus on performance
+
+        ```
+        npm install mysql2 --save
+        npm install @types/mysql2 --save-dev
+        ```
