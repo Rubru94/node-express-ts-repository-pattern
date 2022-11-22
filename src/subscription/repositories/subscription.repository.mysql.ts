@@ -9,7 +9,15 @@ export class SubscriptionRepositoryMySQL implements SubscriptionRepository {
     }
 
     async find(id: number): Promise<ISubscription> | null {
-        const [rows]: any[] = await connector.execute(`SELECT * FROM WalletSubscription WHERE id = :id`, { id });
+        const [rows]: any[] = await connector.execute(`SELECT * FROM WalletSubscription WHERE id=:id`, { id });
+        return rows?.length ? (rows[0] as ISubscription) : null;
+    }
+
+    async findByUserAndCode(userId: number, code: string): Promise<ISubscription> | null {
+        const [rows]: any[] = await connector.execute(`SELECT * FROM WalletSubscription WHERE user_id=:userId AND code=:code`, {
+            userId,
+            code
+        });
         return rows?.length ? (rows[0] as ISubscription) : null;
     }
 
