@@ -10,7 +10,7 @@ export class SubscriptionService {
         return await this.subscriptionRepository.all();
     }
 
-    async find(id: number): Promise<ISubscription | null> {
+    async find(id: number): Promise<ISubscription> {
         return await this.subscriptionRepository.find(id);
     }
 
@@ -27,7 +27,9 @@ export class SubscriptionService {
         else throw new CustomError({ error: 'Subscription not found' });
     }
 
-    async delete(id: number): Promise<void> {
+    async delete(id: number): Promise<ISubscription> {
+        const subscription = await this.subscriptionRepository.find(id);
         await this.subscriptionRepository.delete(id);
+        return subscription;
     }
 }
