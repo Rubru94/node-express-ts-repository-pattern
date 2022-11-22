@@ -21,7 +21,8 @@
         "paths": {
             "@core/*": ["core/*"],
             "@utils/*": ["utils/*"],
-            "@test/*": ["test/*"]
+            "@test/*": ["test/*"],
+            "@subscription/*": ["subscription/*"]
         },
         "forceConsistentCasingInFileNames": true
     },
