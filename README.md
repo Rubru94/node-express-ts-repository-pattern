@@ -1,4 +1,4 @@
-# node-express-ts-repository-pattern
+# node-express-ts-repository-pattern ([original repo](https://github.com/Anexsoft/NodeJS-API-TypeScript-and-Repository-Pattern))
 
 ## npm packages
 
