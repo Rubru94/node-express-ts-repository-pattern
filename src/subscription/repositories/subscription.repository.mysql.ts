@@ -1,27 +1,27 @@
 import DB from '@core/database/mysql.persistence';
-import { ISubscription } from '@subscription/models/subscription.interface';
+import { Subscription } from '@subscription/models/subscription.interface';
 import { SubscriptionRepository } from '@subscription/repositories/subscription.repository';
 
 export class SubscriptionRepositoryMySQL implements SubscriptionRepository {
-    async all(): Promise<ISubscription[]> {
+    async all(): Promise<Subscription[]> {
         const [rows] = await DB.connector.execute(`SELECT * FROM WalletSubscription ORDER BY id DESC`);
-        return rows as ISubscription[];
+        return rows as Subscription[];
     }
 
-    async find(id: number): Promise<ISubscription> | null {
+    async find(id: number): Promise<Subscription> | null {
         const [rows]: any[] = await DB.connector.execute(`SELECT * FROM WalletSubscription WHERE id=:id`, { id });
-        return rows?.length ? (rows[0] as ISubscription) : null;
+        return rows?.length ? (rows[0] as Subscription) : null;
     }
 
-    async findByUserAndCode(userId: number, code: string): Promise<ISubscription> | null {
+    async findByUserAndCode(userId: number, code: string): Promise<Subscription> | null {
         const [rows]: any[] = await DB.connector.execute(`SELECT * FROM WalletSubscription WHERE user_id=:userId AND code=:code`, {
             userId,
             code
         });
-        return rows?.length ? (rows[0] as ISubscription) : null;
+        return rows?.length ? (rows[0] as Subscription) : null;
     }
 
-    async create(susbcription: ISubscription): Promise<void> {
+    async create(susbcription: Subscription): Promise<void> {
         await DB.connector.execute(
             `INSERT INTO WalletSubscription(user_id, code, amount, cron, created_at) VALUES(:userId, :code, :amount, :cron, :createdAt)`,
             {
@@ -34,7 +34,7 @@ export class SubscriptionRepositoryMySQL implements SubscriptionRepository {
         );
     }
 
-    async update(susbcription: ISubscription): Promise<void> {
+    async update(susbcription: Subscription): Promise<void> {
         await DB.connector.execute(
             `UPDATE WalletSubscription SET user_id=:userId, code=:code, amount=:amount, cron=:cron, updated_at=:updatedAt) WHERE id = :id`,
             {

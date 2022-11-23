@@ -8,7 +8,9 @@ addAliases({
     '@utils': `${__dirname}/utils`,
     '@root': `${__dirname}`,
     '@test': `${__dirname}/test`,
-    '@subscription': `${__dirname}/subscription`
+    '@subscription': `${__dirname}/subscription`,
+    '@movement': `${__dirname}/movement`,
+    '@balance': `${__dirname}/balance`
 });
 import App from '@core/app';
 

@@ -22,7 +22,9 @@
             "@core/*": ["core/*"],
             "@utils/*": ["utils/*"],
             "@test/*": ["test/*"],
-            "@subscription/*": ["subscription/*"]
+            "@subscription/*": ["subscription/*"],
+            "@movement/*": ["movement/*"],
+            "@balance/*": ["balance/*"]
         },
         "forceConsistentCasingInFileNames": true
     },
