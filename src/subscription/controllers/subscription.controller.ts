@@ -33,7 +33,6 @@ export class CheckController {
     @POST()
     async create(req: Request, res: Response): Promise<void> {
         try {
-            console.log(req.body);
             await this.subscriptionService.create(req.body as SubscriptionCreateDTO);
             res.send();
         } catch (error) {

@@ -22,7 +22,6 @@ export class SubscriptionRepositoryMySQL implements SubscriptionRepository {
     }
 
     async create(susbcription: ISubscription): Promise<void> {
-        console.log(susbcription);
         await DB.connector.execute(
             `INSERT INTO WalletSubscription(user_id, code, amount, cron, created_at) VALUES(:userId, :code, :amount, :cron, :createdAt)`,
             {
